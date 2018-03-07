@@ -10,6 +10,6 @@ files = `ls 'fallos' | grep pdf`
 files = files.split('.pdf').map(&:strip)
 files.each do |f|
 	next if f.empty?
-	next if File.file?("fallos/#{f}.pdf")
+	next if not File.file?("fallos/#{f}.pdf")
 	convert_save f
 end
